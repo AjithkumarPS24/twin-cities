@@ -482,8 +482,8 @@ $(document).ready(function () {
   $("#appointment-form").submit(function (e) {
     e.preventDefault();
 
-    // ✅ Custom validation for checkbox group: days[]
-    const checked = $("input[name='days[]']:checked").length;
+    // ✅ Custom validation for checkbox group: slots[]
+    const checked = $("input[name='slots[]']:checked").length;
     if (checked === 0) {
       $("#days-error").show();
       $("html, body").animate(
@@ -506,9 +506,10 @@ $(document).ready(function () {
 
     // ✅ Validate other fields
     if ($("#appointment-form").valid()) {
+      $("#appointment-form .message-status").html("");
+      $("#days-error").hide();
       console.log("Success");
       
-      $("#days-error").style.display = "none"; // Hide error if previously shown
       const $button = $("#appointment-form button[type='submit']");
       const originalText = $button.text();
       $button.prop("disabled", true).text("Sending...");
@@ -518,13 +519,14 @@ $(document).ready(function () {
         url: "bookappointment.php",
         data: $("#appointment-form").serialize(),
         success: function (response) {
-          alert("Your appointment request was submitted successfully!");
+          // alert("Your appointment request was submitted successfully!");
+          $("#appointment-form .message-status").html(response);
           $("#appointment-form")[0].reset();
           $button.prop("disabled", false).text(originalText);
           $("#days-error").hide(); // hide error if previously shown
         },
         error: function () {
-          alert("An error occurred. Please try again later.");
+          $("#appointment-form .message-status").html(response);
           $button.prop("disabled", false).text(originalText);
         },
       });

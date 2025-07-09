@@ -5,11 +5,11 @@
  */
 
 // SMTP Email Settings
-$from_email             = "psajithkumar97@gmail.com";
-$from_email_password    = "wkus hlnt cocm xgvd";
-$from_email_name        = "Ajith kumar";
-$to_email               = "ajithkumar.ps@spritle.com";
-$to_email_name          = "Ajithkumar PS";
+$from_email             = "tccbookappt@gmail.com";
+$from_email_password    = "vhza ldmi pygg ydad";
+$from_email_name        = "TCC";
+$to_email               = "cassiesemanko@tccardio.org";
+$to_email_name          = "Cassie Semanko";
 $email_subject          = 'Appointment Request from Twin Cities Cardiology';
 
 // Form fields to receive in email
@@ -18,9 +18,7 @@ $field_list = array(
     'email',
     'phone',
     'insurance',
-    'days',
-    'subject',
-    'primary-care',
+    'slots',
     'message',
 );
 
@@ -30,9 +28,7 @@ $required_fields = array(
     'email',
     'phone',
     'insurance',
-    'days',
-    'subject',
-    'primary-care',
+    'slots',
     'message',
 );
 
@@ -80,8 +76,8 @@ if (!empty($_POST)) {
 
     // Validate required fields
     foreach ($required_fields as $key) {
-        if ($key === 'days') {
-            if (empty($_POST['days']) || !is_array($_POST['days'])) {
+        if ($key === 'slots') {
+            if (empty($_POST['slots']) || !is_array($_POST['slots'])) {
                 $error_message .= '<li>Please select at least one available day.</li>';
             }
         } else {
@@ -101,11 +97,11 @@ if (!empty($_POST)) {
         // Build email body
         $email_body = '<h2>Appointment Form Submission Details</h2><table style="border: 1px solid #b5b5b5; padding: 5px;">';
         foreach ($field_list as $key) {
-            if ($key === 'days') {
-                $days = isset($_POST['days']) && is_array($_POST['days']) ? implode(', ', $_POST['days']) : '';
+            if ($key === 'slots') {
+                $slots = isset($_POST['slots']) && is_array($_POST['slots']) ? implode(', ', $_POST['slots']) : '';
                 $email_body .= '<tr>
-                    <td style="border: 1px solid #b5b5b5; padding: 5px;"><strong>Available Days</strong></td>
-                    <td style="border: 1px solid #b5b5b5; padding: 5px;">: ' . htmlspecialchars($days) . '</td>
+                    <td style="border: 1px solid #b5b5b5; padding: 5px;"><strong>Available slots</strong></td>
+                    <td style="border: 1px solid #b5b5b5; padding: 5px;">: ' . htmlspecialchars($slots) . '</td>
                 </tr>';
             } else {
                 $value = isset($_POST[$key]) ? $_POST[$key] : '';
@@ -134,7 +130,7 @@ if (!empty($_POST)) {
         $mail->msgHTML($email_body);
 
         if ($mail->send()) {
-            echo '<div class="alert alert-success" role="alert">Thank you for your appointment request.<br>Our team will contact you soon!</div>';
+            echo '<div class="alert alert-success" role="alert">Thank you for your appointment request.<br/>Our team will contact you soon!!</div>';
             // save_mail($mail); // Uncomment if you want to save to Sent Mail
         } else {
             echo '<div class="alert alert-danger" role="alert">Error: Cannot send email.<br>' . $mail->ErrorInfo . '</div>';
