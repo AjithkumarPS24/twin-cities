@@ -441,6 +441,7 @@ if ($.isFunction($.fn.validate)) {
      Send email via Ajax
    Make sure you configure send.php file 
      -------------------------------------*/
+
 $("#contact-form").submit(function () {
   if ($("#contact-form .doing-via-ajax").length == 0) {
     $("#contact-form").prepend(
@@ -450,7 +451,6 @@ $("#contact-form").submit(function () {
 
   if ($("#contact-form").valid()) {
     // check if form is valid
-
     $(".contact-form .message-status").html("");
     $(".form-btn-loader").removeClass("d-none");
     $(".contact-form button.pbmit-btn span").hide();
@@ -464,8 +464,27 @@ $("#contact-form").submit(function () {
         $(".form-btn-loader").addClass("d-none");
         $(".contact-form button.pbmit-btn span").show();
         $(".contact-form button.pbmit-btn").removeAttr("disabled");
-        $(".contact-form .message-status").html(cevap);
+        // $(".contact-form .message-status").html(cevap);
         $("#contact-form")[0].reset(); // Reset the form after successful submission
+        $("#formToast")
+          .removeClass("bg-danger bg-success")
+          .addClass("bg-custom-green");
+        $("#toastMessage").html(
+          " ✅ <span class='fw-bold' style='font-size: 1.2rem;'>Success!</span><br/>Thank you for contacting us. Our team will be in touch soon!!"
+        );
+        const toast = new bootstrap.Toast(document.getElementById("formToast"));
+        toast.show();
+      },
+      error: function () {
+        // Show error toast
+        $("#formToast")
+          .removeClass("bg-success bg-danger")
+          .addClass("bg-custom-red");
+        $("#toastMessage").html(
+          " ⚠️ <span class='fw-bold' style='font-size: 1.2rem;'>Warning!</span><br/> Failed to send your message!<br/>Please try again later..."
+        );
+        const toast = new bootstrap.Toast(document.getElementById("formToast"));
+        toast.show();
       },
     });
   }
@@ -494,7 +513,7 @@ $(document).ready(function () {
       );
       return false;
     } else {
-      $("#days-error").hide();
+      $("#days-error").hide((type = "tel"));
     }
 
     // ✅ Add hidden input for AJAX flag (only once)
@@ -509,7 +528,7 @@ $(document).ready(function () {
       $("#appointment-form .message-status").html("");
       $("#days-error").hide();
       console.log("Success");
-      
+
       const $button = $("#appointment-form button[type='submit']");
       const originalText = $button.text();
       $button.prop("disabled", true).text("Sending...");
@@ -520,14 +539,36 @@ $(document).ready(function () {
         data: $("#appointment-form").serialize(),
         success: function (response) {
           // alert("Your appointment request was submitted successfully!");
-          $("#appointment-form .message-status").html(response);
+          // $("#appointment-form .message-status").html(response);
           $("#appointment-form")[0].reset();
           $button.prop("disabled", false).text(originalText);
           $("#days-error").hide(); // hide error if previously shown
+          $("#formToast")
+            .removeClass("bg-danger bg-success")
+            .addClass("bg-custom-green");
+          $("#toastMessage").html(
+            "✅ <span class='fw-bold' style='font-size: 1.1rem;'>Success!</span><br/> Thank you for your appointment request. Our team will contact you soon!!"
+          );
+
+          // Show toast
+          const toast = new bootstrap.Toast(
+            document.getElementById("formToast")
+          );
+          toast.show();
         },
         error: function () {
-          $("#appointment-form .message-status").html(response);
+          // $("#appointment-form .message-status").html(response);
           $button.prop("disabled", false).text(originalText);
+          $("#formToast")
+            .removeClass("bg-success bg-danger")
+            .addClass("bg-custom-red");
+          $("#toastMessage").html(
+            "⚠️ <span class='fw-bold' style='font-size: 1.2rem;'>Warning!</span><br/>Failed to send your message!<br/>Please try again later..."
+          );
+          const toast = new bootstrap.Toast(
+            document.getElementById("formToast")
+          );
+          toast.show();
         },
       });
     }

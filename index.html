@@ -40,13 +40,14 @@
 
       <style>
             .insurance-swiper .swiper-wrapper {
-    transition-timing-function: linear !important;
+            transition-timing-function: linear !important;
             }
             .pbmit-client-style-1 img {
-    max-height: 180px; /* Adjust as needed */
-    width: auto;
-    object-fit: contain;
-    }   /* Insurance Partners Swiper - Unique Classes */
+            max-height: 180px; /* Adjust as needed */
+            width: auto;
+            object-fit: contain;
+            }      
+           /* Insurance Partners Swiper - Unique Classes */
         .insurance-partners-swiper {
             margin-top: 40px;
             padding: 20px 0;
@@ -89,36 +90,6 @@
             filter: grayscale(100%);
             transition: filter 0.3s ease;
         }
-
-        /* .insurance-client-wrapper:hover .insurance-logo-main img {
-            filter: grayscale(0%);
-        } */
-
-        /* .insurance-logo-hover {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            mix-blend-mode: normal; /* prevent color blending that may look like shadow */
-    
-
-        /* .insurance-logo-hover img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-        }
-
-        .insurance-client-wrapper:hover .insurance-logo-hover {
-            opacity: 1;
-        }
-
-        .insurance-client-wrapper:hover .insurance-logo-main {
-            opacity: 0;
-        } */
-
         .insurance-title-hidden {
             display: none;
         }
@@ -156,25 +127,351 @@
             }
         }
         .insurance-partners-swiper .swiper-pagination-bullet-active {
-    background: #25355f;
-    opacity: 1 !important;  /* Add this line */
-    transform: scale(1.2);
-}
-@media (min-width: 1024px) {
-  .insurance-partners-swiper .swiper-wrapper {
-    padding-right: 30px;
-  }
-}
-#hero-buttons {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.5s ease-in-out;
-}
+          background: #25355f;
+          opacity: 1 !important;  /* Add this line */
+          transform: scale(1.2);
+          }
 
-#hero-buttons.show {
-    opacity: 1;
-    visibility: visible;
-}
+
+        @media (min-width: 1024px) {
+          .insurance-partners-swiper .swiper-wrapper {
+            padding-right: 30px;
+          }
+        }
+        #hero-buttons {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        #hero-buttons.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .clickable-address:hover {
+            color: rgb(199, 49, 49);
+          }
+
+          @media (max-width: 768px) {
+            .space-align {
+              max-width: 90% !important;
+              padding: 0 15px;
+            }   
+          }
+
+          .client-marquee-wrapper {
+            width: 100%;
+            overflow: hidden;
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .client-marquee-track {
+            display: flex;
+            align-items: center;
+            animation: scroll 25s linear infinite;
+            width: calc(200% + 40px);
+        }
+
+        .logo-item {
+            flex: 0 0 auto;
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+            height: 60px;
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(20%);
+            transition: all 0.3s ease;
+        }
+
+        .logo-item:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .client-marquee-wrapper:hover .client-marquee-track {
+            animation-play-state: paused;
+        }
+
+        @media (min-width: 1200px) {
+            .client-marquee-track {
+                animation-duration: 25s;
+            }
+        }
+        .client-marquee-wrapper {
+            width: 100%;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 40px 0;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.2);
+            position: relative;
+        }
+
+        .client-marquee-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                rgba(248,249,250,0.8) 0%, 
+                transparent 10%, 
+                transparent 90%, 
+                rgba(248,249,250,0.8) 100%);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .client-marquee-track {
+            display: flex;
+            align-items: center;
+            animation: scroll 25s linear infinite;
+            width: calc(200% + 80px);
+        }
+
+        .logo-item {
+            flex: 0 0 auto;
+            margin: 0 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+            height: 90px;
+            background: rgba(255,255,255,0.8);
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: grayscale(10%) brightness(0.95);
+            transition: all 0.4s ease;
+        }
+
+        .logo-item:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+            background: rgba(255,255,255,0.95);
+        }
+
+        .logo-item:hover img {
+            filter: grayscale(0%) brightness(1);
+            transform: scale(1.1);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .client-marquee-wrapper:hover .client-marquee-track {
+            animation-play-state: paused;
+        }
+
+       .client-marquee-wrapper {
+        padding: 20px 0;
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        border-radius: 12px;
+    }
+    
+    .logo-item {
+        min-width: 100px;
+        height: 70px;
+        margin: 0 15px;
+        padding: 10px;
+    }
+    
+    .client-marquee-track {
+        animation-duration: 25s; /* Faster on mobile */
+    }
+
+
+        @media (min-width: 1200px) {
+            .client-marquee-track {
+                animation-duration: 25s;
+            }
+            
+            .logo-item {
+                min-width: 200px;
+                height: 110px;
+                margin: 0 35px;
+            }
+        }
+
+        @media (min-width: 1400px) {
+            .logo-item {
+                min-width: 200px;
+                height: 110px;
+                margin: 0 40px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+      .client-marquee-track {
+        animation-duration: 12s !important; /* Make it faster */
+      }     
+    }
+
+      footer .container {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      /* Ensure consistent alignment for all list items */
+      footer ul li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+      }
+
+      /* Fix responsiveness for medium screens (768px - 1024px) */
+      @media (min-width: 768px) and (max-width: 1024px) {
+        footer .row {
+          row-gap: 2rem;
+        }
+
+        footer .col-md-3 {
+          flex: 0 0 auto;
+          width: 50%;
+        }
+
+        footer .col-md-3:nth-child(1),
+        footer .col-md-3:nth-child(2) {
+          margin-bottom: 1.5rem;
+        }
+
+        .clinic-hours-shift {
+          padding-left: 0 !important;
+        }
+
+        .contact-right-shift {
+          padding-left: 0 !important;
+        }
+      }
+
+      /* Ensure proper spacing on larger screens */
+      @media (min-width: 1025px) {
+        .clinic-hours-shift {
+          padding-left: 1rem !important;
+        }
+
+        .contact-right-shift {
+          padding-left: 2rem !important;
+        }
+      }
+
+      .pbmit-ihbox-style-3 {
+        max-width: 100%;
+      }
+
+      @media (max-width: 768px) {
+        .pbmit-ihbox-box {
+          flex-wrap: nowrap;
+          align-items: center;
+        }
+
+        .pbmit-ihbox-contents a {
+          font-size: 14px;
+          word-break: break-word;
+          display: inline-block;
+          max-width: 100%;
+        }
+
+        .pbmit-ihbox-icon {
+          margin-bottom: 0.5rem;
+          margin-right: 0.5rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        footer [class^="pbmit-base-icon-"]:before,
+        footer [class*=" pbmit-base-icon-"]:before {
+          width: 1em;
+          margin-right: 0.7em !important;
+          text-align: center;
+        }
+      }
+
+      @media (min-width: 768px) {
+        footer [class^="pbmit-base-icon-"]:before,
+        footer [class*=" pbmit-base-icon-"]:before {
+          width: 1em;
+          margin-right: 0.7em !important;
+          text-align: center;
+        }
+
+        @media (min-width: 768px) and (max-width: 768px) {
+          footer .row.row-cols-md-4 > div {
+            flex: 0 0 50%;
+            max-width: 50%;
+            margin-bottom: 1.5rem;
+          }
+
+          footer .contact-right-shift a,
+          footer .contact-right-shift span {
+            font-size: 14px;
+            word-break: break-word;
+          }
+
+          footer .contact-right-shift i {
+            font-size: 16px;
+          }
+
+          .fst-italic.text-light {
+            margin-left: 0 !important;
+            text-align: left;
+          }
+
+          .clinic-hours-shift {
+            padding-left: 1.5rem !important;
+          }
+
+          .contact-right-shift {
+            padding-left: 1.5rem !important;
+          }
+        }
+      }
+
+          @media (min-width: 768px) and (max-width: 1024px) {
+      .hide-at-768 {
+        display: none !important;
+      }
+    }
+
+
+
+
+
       </style>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -226,8 +523,6 @@
                                   <img src="images/logo/Group transparent.png" alt="MY TCC Logo" class="img-fluid me-1 " style="width: 20px; height: 20px;">
                                   <span style="font-size: 16px;">MY TCC</span>
                                 </span> -->
-                                  </ul>
-                               </li>
                             </ul>						
                          </div>
                       </div>
@@ -263,9 +558,9 @@
                                                       
                                                   </li>
                                                   <li class="dropdown">
-                                        <a style="cursor: pointer; display: flex; align-items: center; ">
-                                          SERVICES 
-                                          <span class="arrow" style="font-size: 1.3rem; " class="">&#9662;</span>
+                                        <a  style="cursor: pointer; display: flex; align-items: center; ">
+                                          SERVICES&nbsp;
+                                          <span class="arrow hide-at-768" style="font-size: 1.3rem; " class="">&#9662;</span>
                                         </a>
                                         <ul>
                                           <li><a href="cardiology.html">Cardiology</a></li>
@@ -274,17 +569,13 @@
                                           <li><a href="conciergeprogram.html">Concierge Program</a></li>
                                         </ul>
                                       </li>
-                                      
-                                              
-                                              
+                                      <li><a href="contact-us.html ">CONTACT US</a></li>
+                                      <li class="d-block d-xl-none"><a href="bookmyappointment.html">BOOK APPOINTMENT</a></li> 
+                                      <!-- <li><a href=" " class="d-block d-lg-none">MY TCC</a></li> -->            
                                      
-                                              
-                                                  <li><a href="contact-us.html ">CONTACT US</a></li>
-                                                  <li class="d-block d-xl-none"><a href="bookmyappointment.html">BOOK APPOINTMENT</a></li> 
-                                     <!-- <li><a href=" " class="d-block d-lg-none">MY TCC</a></li> -->
-                                              </ul>
-                                          </div>
-                                      </nav>
+                                    </ul>
+                                    </div>
+                                    </nav>
                                   </div>
                                </div>
                                <div class="pbmit-right-box">
@@ -306,13 +597,10 @@
               <div class="swiper-slider"  data-dots="true" data-arrows="false" data-columns="1" data-margin="0" data-effect="fade">
                   <div class="swiper-wrapper">
            <!-- Top Gradient Overlay (visible only on lg and up) -->
-<div class="d-none d-lg-block" style="position: absolute; top: 0; left: 0; width: 100%; height: 160px; background: linear-gradient(180deg, #00213a 0, rgba(0, 33, 58, 0) 100%); pointer-events: none; z-index: 1;"></div>
+                <div class="d-none d-lg-block" style="position: absolute; top: 0; left: 0; width: 100%; height: 160px; background: linear-gradient(180deg, #00213a 0, rgba(0, 33, 58, 0) 100%); pointer-events: none; z-index: 1;"></div>
 
-<!-- Bottom Gradient Overlay (visible only on lg and up) -->
-<div class="d-none d-lg-block" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 19.8rem; background: linear-gradient(180deg, rgba(0, 48, 87, 0) 40.86%, #003057 100%); pointer-events: none; z-index: 1;"></div>
-
-                
-                  
+                <!-- Bottom Gradient Overlay (visible only on lg and up) -->
+                <div class="d-none d-lg-block" style="position: absolute; bottom: 0; left: 0; width: 100%; height: 19.8rem; background: linear-gradient(180deg, rgba(0, 48, 87, 0) 40.86%, #003057 100%); pointer-events: none; z-index: 1;"></div>
                       <div class="swiper-slide">
                           <div class="pbmit-slider-item" >
                       
@@ -324,10 +612,10 @@
                             <source src="videos/HeroSection.mp4" type="video/mp4" />
                          </video> -->
                          <video id="heroVideo" autoplay muted loop playsinline
-  class="w-100 h-100"
-  style="object-fit: cover; object-position: center;">
-  <source src="videos/HeroSection.mp4" type="video/mp4" />
-</video>
+                          class="w-100 h-100"
+                          style="object-fit: cover; object-position: center;">
+                          <source src="videos/HeroSection.mp4" type="video/mp4" />
+                        </video>
 
                       </div>
                          <!-- <div 
@@ -341,27 +629,25 @@
                          ">
                        </div> -->
 
-                                                      <div class="container">
-                                   <div class="row text-center">
-                                      <div class="col-md-12"> 
-                                          <div class="pbmit-slider-content">
-                                              <h2 class="pbmit-title transform-bottom transform-delay-2"> Strong Hearts Begin <br/> with Smart Choices</h2>
-                                              <div id="hero-buttons"  class="pbmit-button d-flex justify-content-center">
-                                                  <div class="me-4 transform-bottom transform-delay-3">
-                                                      <a href="about-us.html" class="pbmit-btn pbmit-btn-white">Meet the Team </a>
-                                                  </div>
-                                                  <div class="transform-bottom transform-delay-4">
-                                                      <a href="bookmyappointment.html" class="pbmit-btn pbmit-btn-outline-white">BOOK APPOINTMENT</a>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div>
-                                  </div> 
-                                  
-                                  
+                       <div class="container">
+                        <div class="row text-center">
+                          <div class="col-md-12"> 
+                          <div class="pbmit-slider-content">
+                            <h2 class="pbmit-title transform-bottom transform-delay-2"> Strong Hearts Begin <br/> with Smart Choices</h2>
+                              <div id="hero-buttons"  class="pbmit-button d-flex justify-content-center">
+                                <div class="me-4 transform-bottom transform-delay-3">
+                                  <a href="about-us.html" class="pbmit-btn pbmit-btn-white">Meet the Team </a>
+                                </div>
+                                <div class="me-4 transform-bottom transform-delay-3">
+                                  <a href="bookmyappointment.html" class="pbmit-btn pbmit-btn-white">BOOK APPOINTMENT </a>
+                              </div>
                               </div>
                           </div>
+                        </div>
+                       </div>
                       </div>
+                    </div>
+                      </div>              
                       <!-- Slide2 -->
                   
           
@@ -413,13 +699,13 @@
                                   </div>
                                   <div class="pbmit-ihbox-contents pe-5">
                                      <div class="pbmit-heading-desc">
-                                           <ul class="pbmit-list-style-1" style="list-style-type: disc; padding-left: 40px;         grid-template-columns: repeat(2, 1fr);    gap:10px
- "   style="list-style-type: disc; 
-         padding-left: 0; 
-         display: grid; 
-         grid-template-columns: 1fr; 
-         gap: 10px; 
-         max-width: 600px;">
+                                           <ul class="pbmit-list-style-1" style="list-style-type: disc; padding-left: 40px;grid-template-columns: repeat(2, 1fr); gap:10px
+                                            "style="list-style-type: disc; 
+                                                padding-left: 0; 
+                                                display: grid; 
+                                                grid-template-columns: 1fr; 
+                                                gap: 10px; 
+                                                max-width: 600px;">
                                               <li>Chest pain</li>
                                               <li>Dizziness or fainting</li>
                                               <li>Shortness of breath</li>
@@ -428,49 +714,51 @@
                                               <li>Cough when lying down</li>
                                               <li> Cough with leg swelling</li>
                                               <li>Varicose veins</li>
+                                              </ul>
                                         </div>
-                                                                              <div class="d-flex mt-3">
-                                                                               <div class="pbmit-ihbox-icon">
-                                                                                  <div class="pbmit-ihbox-icon-wrapper">
-                                                                                     <i class="pbmit-cardioly-icon pbmit-cardioly-icon-comment"></i>
-                                                                                  </div>
-                                                                               </div>
-                                                                               <h2 class="pbmit-element-title" style="font-weight: 700;">
-                                                                                  Family or personal heart history
+                                  
+                                        <div class="d-flex mt-3">
+                                          <div class="pbmit-ihbox-icon">
+                                             <div class="pbmit-ihbox-icon-wrapper">
+                                                <i class="pbmit-cardioly-icon pbmit-cardioly-icon-comment"></i>
+                                             </div>
+                                          </div>
+                                          <h2 class="pbmit-element-title" style="font-weight: 700;">
+                                             Family or personal heart history
 
 
-                                                                               </h2>
-                                                                            </div><div class="d-flex mt-3">
-                                                                               <div class="pbmit-ihbox-icon">
-                                                                                  <div class="pbmit-ihbox-icon-wrapper">
-                                                                                     <i class="pbmit-cardioly-icon pbmit-cardioly-icon-comment"></i>
-                                                                                  </div>
-                                                                               </div>
-                                                                               <h2 class="pbmit-element-title" style="font-weight: 700;">
-                                                                                  Know your heart disease risk
+                                          </h2>
+                                       </div><div class="d-flex mt-3">
+                                          <div class="pbmit-ihbox-icon">
+                                             <div class="pbmit-ihbox-icon-wrapper">
+                                                <i class="pbmit-cardioly-icon pbmit-cardioly-icon-comment"></i>
+                                             </div>
+                                          </div>
+                                          <h2 class="pbmit-element-title" style="font-weight: 700;">
+                                             Know your heart disease risk
 
 
-                                                                               </h2>
-                                                                            </div><div class="d-flex mt-3">
-                                                                               <div class="pbmit-ihbox-icon">
-                                                                                  <div class="pbmit-ihbox-icon-wrapper">
-                                                                                     <i class="pbmit-cardioly-icon pbmit-cardioly-icon-comment"></i>
-                                                                                  </div>
-                                                                               </div>
-                                                                               <h2 class="pbmit-element-title" style="font-weight: 700;">
-                                                                                  Boost longevity and quality of life                                                                                 </h2>
-                                                                            </div>
-                                                                            </div><div class="d-flex mt-3">
-                                                                               <div class="pbmit-ihbox-icon">
-                                                                                  <div class="pbmit-ihbox-icon-wrapper">
-                                                                                     <i class="pbmit-cardioly-icon pbmit-cardioly-icon-comment"></i>
-                                                                                  </div>
-                                                                               </div>
-                                                                               <h2 class="pbmit-element-title" style="font-weight: 700;">
-                                                                                  Test cardiopulmonary fitness / athletic performance
+                                          </h2>
+                                       </div><div class="d-flex mt-3">
+                                          <div class="pbmit-ihbox-icon">
+                                             <div class="pbmit-ihbox-icon-wrapper">
+                                                <i class="pbmit-cardioly-icon pbmit-cardioly-icon-comment"></i>
+                                             </div>
+                                          </div>
+                                          <h2 class="pbmit-element-title" style="font-weight: 700;">
+                                             Boost longevity and quality of life                                                                                 </h2>
+                                       </div>
+                                       </div><div class="d-flex mt-3">
+                                          <div class="pbmit-ihbox-icon">
+                                             <div class="pbmit-ihbox-icon-wrapper">
+                                                <i class="pbmit-cardioly-icon pbmit-cardioly-icon-comment"></i>
+                                             </div>
+                                          </div>
+                                          <h2 class="pbmit-element-title" style="font-weight: 700;">
+                                             Test cardiopulmonary fitness / athletic performance
 
-                                                                               </h2>
-                                                                            </div>
+                                          </h2>
+                                       </div>
                                   </div>
                                </div>
                             </div>
@@ -494,7 +782,7 @@
             <h2 class="pbmit-title fw-bold" style="font-size: 32px; color: var(--pbmit-heading-color);">
               Cardiovascular care that meets your unique needs
             </h2>
-            <p class="mt-3" style="font-size: 16px; color: var(--pbmit-body-typography-color); max-width: 700px; margin: 0 auto;">
+            <p class="mt-3 space-align" style="font-size: 16px; color: var(--pbmit-body-typography-color); max-width: 800px; margin: 0 auto;">
               We care to know you, meet you where you are, and help you make the right choices for you.
             </p>
           </div>
@@ -509,31 +797,31 @@
              
           <div class="swiper-wrapper">
             <!-- Card 1: Cardiology -->
-            <div class="swiper-slide col-md-4">
-              <article class="pbmit-service-style-1">
-                <div class="pbminfotech-post-item">
-                  <div class="pbmit-featured-wrapper">
-                    <div class="service-hover">
-                      <img src="images/valve_disorder_management (1).webp" class="img-fluid" alt="Cardiology Service Image" />
+              <div class="swiper-slide col-md-4">
+                <article class="pbmit-service-style-1">
+                  <div class="pbminfotech-post-item">
+                    <div class="pbmit-featured-wrapper" >
+                      <div class="service-hover">
+                        <img src="images/valve_disorder_management (1).webp" class="img-fluid" alt="Cardiology Service Image" />
+                      </div>
                     </div>
-                  </div>
-                  <div class="pbminfotech-box-content">
-                    <div class="pbmit-service-icon-wrapper">
-                      <img src="/images/icon/vascular.svg" alt="Heart icon" />
-                    </div>
-                    <div class="pbminfotech-box-content-inner">
-                      <div class="pbmit-service-cat"><a href="#" rel="tag">Heart</a></div>
-                      <h3 class="pbmit-service-title">
-                        <a href="/cardiology.html">Cardiology</a>
-                      </h3>
-                      <div class="pbmit-service-btn">
-                        <a class="pbmit-service-btn-a" href="/cardiology.html"><span>Readmore</span></a>
+                    <div class="pbminfotech-box-content">
+                      <div class="pbmit-service-icon-wrapper vascular">
+                        <img src="/images/icon/vascular.svg" alt="Heart icon" />
+                      </div>
+                      <div class="pbminfotech-box-content-inner">
+                        <div class="pbmit-service-cat"><a href="#" rel="tag">Heart</a></div>
+                        <h3 class="pbmit-service-title">
+                          <a href="/cardiology.html">Cardiology</a>
+                        </h3>
+                        <div class="pbmit-service-btn">
+                          <a class="pbmit-service-btn-a" href="/cardiology.html"><span>Readmore</span></a>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </article>
-            </div>
+                </article>
+              </div>
       
             <!-- Card 2: Vascular Medicine -->
             <div class="swiper-slide col-md-4">
@@ -545,7 +833,7 @@
                     </div>
                   </div>
                   <div class="pbminfotech-box-content">
-                    <div class="pbmit-service-icon-wrapper">
+                    <div class="pbmit-service-icon-wrapper arteries">
                       <img src="/images/leg.svg" alt="Vascular icon" />
                     </div>
                     <div class="pbminfotech-box-content-inner">
@@ -560,10 +848,9 @@
                   </div>
                 </div>
               </article>
-            </div>
-      
-            <!-- Card 3: Executive Health Physical -->
-            <div class="swiper-slide col-md-4">
+            </div> 
+       <!-- Card 3: Executive Health Physical -->
+             <div class="swiper-slide col-md-4">
               <article class="pbmit-service-style-1">
                 <div class="pbminfotech-post-item">
                   <div class="pbmit-featured-wrapper">
@@ -572,7 +859,7 @@
                     </div>
                   </div>
                   <div class="pbminfotech-box-content">
-                    <div class="pbmit-service-icon-wrapper">
+                    <div class="pbmit-service-icon-wrapper exec">
                       <img src="/images/icon/Executive.svg" class="ps-2" alt="Executive icon" />
                     </div>
                     <div class="pbminfotech-box-content-inner">
@@ -588,19 +875,19 @@
                 </div>
               </article>
             </div>
-      
+       
             <!-- Card 4: Concierge Program -->
-            <div class="swiper-slide col-md-4">
+             <div class="swiper-slide col-md-4">
               <article class="pbmit-service-style-1">
                 <div class="pbminfotech-post-item">
                   <div class="pbmit-featured-wrapper">
                     <div class="service-hover">
-                      <img src="images/Concierge.webp" class="img-fluid" alt="Concierge Service Image" />
+                       <img src="images/Concierge.webp" class="img-fluid" alt="Concierge Service Image" />
                     </div>
                   </div>
                   <div class="pbminfotech-box-content">
-                    <div class="pbmit-service-icon-wrapper">
-                      <i class="fa fa-tablet" aria-hidden="true"></i>
+                    <div class="pbmit-service-icon-wrapper conc">
+                      <i class="fa fa-mobile" aria-hidden="true"></i>
                     </div>
                     <div class="pbminfotech-box-content-inner">
                       <div class="pbmit-service-cat"><a href="#" rel="tag">Boutique</a></div>
@@ -614,7 +901,7 @@
                   </div>
                 </div>
               </article>
-            </div>
+            </div> 
           </div>
         </div>
         <!-- Swiper Slider End -->
@@ -631,141 +918,48 @@
     </h2>
     <p class="mt-2" style="font-size: 16px; color: var(--pbmit-body-typography-color); max-width: 700px; margin: 0 auto;">
       We want care to be easy – so we’ve partnered with
-many traditional insurance providers, including:
+      many traditional insurance providers, including:
     </p>
     </div>
     <!-- Desktop Swiper (visible on md and above) -->
     <div class="container-fluid swiper insurance-partners-swiper desktop px-4">
-
-      <div class="swiper-wrapper" id="insuranceMarqueeWrapper">
-    
-       
-    
-        <!-- Aetna -->
-        <div class="swiper-slide">
-          <article class="insurance-client-card">
-            <div class="insurance-client-wrapper insurance-client-with-hover-img">
-              <h4 class="insurance-title-hidden">Aetna</h4>
-              <div class="insurance-logo-hover">
-                <img src="images/insurancelogos/Aetna.png" class="img-fluid" alt="Aetna">
-              </div>
-            </div>
-          </article>
+      <div class="client-marquee-wrapper  mt-4">
+        <div class="client-marquee-track d-flex align-items-center">
+            <!-- Set 1 -->
+            <div class="logo-item"><img src="images/insurancelogos/Aetna.png" alt="Aetna" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/Allina Aetna.png" alt="Allina Aetna" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/Americas PPO.png" alt="America's PPO" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/BCBS.png" alt="BCBS" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/Cigna.png" alt="Cigna" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/1st Health Network.png" alt="1st Health Network" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/HP.png" alt="HP" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/Medicaid.png" alt="Medicaid" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/Medicare.png" alt="Medicare" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/Medicare RR.png" alt="Medicare RR" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/MultiPlan.png" alt="MultiPlan" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/PrimeWest.png" alt="PrimeWest" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/Sanford.png" alt="Sanford" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/UCare.png" alt="UCare" /></div>
+            
+            <!-- Set 2 (Duplicate for seamless loop) -->
+            <div class="logo-item"><img src="images/insurancelogos/Aetna.png" alt="Aetna" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/Allina Aetna.png" alt="Allina Aetna" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/Americas PPO.png" alt="America's PPO" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/BCBS.png" alt="BCBS" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/Cigna.png" alt="Cigna" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/1st Health Network.png" alt="1st Health Network" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/HP.png" alt="HP" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/Medicaid.png" alt="Medicaid" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/Medicare.png" alt="Medicare" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/Medicare RR.png" alt="Medicare RR" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/MultiPlan.png" alt="MultiPlan" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/PrimeWest.png" alt="PrimeWest" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/Sanford.png" alt="Sanford" /></div>
+            <div class="logo-item"><img src="images/insurancelogos/UCare.png" alt="UCare" /></div>
         </div>
+    </div>
+      
     
-        <!-- BCBS -->
-        <div class="swiper-slide">
-          <article class="insurance-client-card">
-            <div class="insurance-client-wrapper insurance-client-with-hover-img">
-              <h4 class="insurance-title-hidden">Blue Cross Blue Shield</h4>
-              <div class="insurance-logo-hover">
-                <img src="images/insurancelogos/BCBS.png" class="img-fluid" alt="BCBS">
-              </div>
-            </div>
-          </article>
-        </div>
-    
-        <!-- Cigna -->
-        <div class="swiper-slide">
-          <article class="insurance-client-card">
-            <div class="insurance-client-wrapper insurance-client-with-hover-img">
-              <h4 class="insurance-title-hidden">Cigna</h4>
-              <div class="insurance-logo-hover">
-                <img src="images/insurancelogos/Cigna.png" class="img-fluid" alt="Cigna">
-              </div>
-            </div>
-          </article>
-        </div>
-
-
-         <!-- 1st Health Network -->
-         <div class="swiper-slide">
-          <article class="insurance-client-card">
-            <div class="insurance-client-wrapper insurance-client-with-hover-img">
-              <h4 class="insurance-title-hidden">1st Health Network</h4>
-              <div class="insurance-logo-hover">
-                <img src="images/insurancelogos/1st Health Network.png" class="img-fluid" alt="1st Health Network">
-              </div>
-            </div>
-          </article>
-        </div>
-    
-        <!-- Health Partners -->
-        <div class="swiper-slide">
-          <article class="insurance-client-card">
-            <div class="insurance-client-wrapper insurance-client-with-hover-img">
-              <h4 class="insurance-title-hidden">Health Partners</h4>
-              <div class="insurance-logo-hover">
-                <img src="images/insurancelogos/HP.png" class="img-fluid" alt="Health Partners">
-              </div>
-            </div>
-          </article>
-        </div>
-    
-        <!-- Medicaid -->
-        <div class="swiper-slide">
-          <article class="insurance-client-card">
-            <div class="insurance-client-wrapper insurance-client-with-hover-img">
-              <h4 class="insurance-title-hidden">Medicaid</h4>
-              <div class="insurance-logo-hover">
-                <img src="images/insurancelogos/Medicaid.png" class="img-fluid" alt="Medicaid">
-              </div>
-            </div>
-          </article>
-        </div>
-    
-        <!-- Medicare -->
-        <div class="swiper-slide">
-          <article class="insurance-client-card">
-            <div class="insurance-client-wrapper insurance-client-with-hover-img">
-              <h4 class="insurance-title-hidden">Medicare</h4>
-              <div class="insurance-logo-hover">
-                <img src="images/insurancelogos/Medicare.png" class="img-fluid" alt="Medicare">
-              </div>
-            </div>
-          </article>
-        </div>
-    
-        <!-- MultiPlan -->
-        <div class="swiper-slide">
-          <article class="insurance-client-card">
-            <div class="insurance-client-wrapper insurance-client-with-hover-img">
-              <h4 class="insurance-title-hidden">MultiPlan</h4>
-              <div class="insurance-logo-hover">
-                <img src="images/insurancelogos/MultiPlan.png" class="img-fluid" alt="MultiPlan">
-              </div>
-            </div>
-          </article>
-        </div>
-    
-        <!-- PrimeWest -->
-        <div class="swiper-slide">
-          <article class="insurance-client-card">
-            <div class="insurance-client-wrapper insurance-client-with-hover-img">
-              <h4 class="insurance-title-hidden">PrimeWest</h4>
-              <div class="insurance-logo-hover">
-                <img src="images/insurancelogos/PrimeWest.png" class="img-fluid" alt="PrimeWest">
-              </div>
-            </div>
-          </article>
-        </div>
-    
-        <!-- UCare -->
-        <div class="swiper-slide">
-          <article class="insurance-client-card">
-            <div class="insurance-client-wrapper insurance-client-with-hover-img">
-              <h4 class="insurance-title-hidden">UCare</h4>
-              <div class="insurance-logo-hover">
-                <img src="images/insurancelogos/UCare.png" class="img-fluid" alt="UCare">
-              </div>
-            </div>
-          </article>
-        </div>
-    
-      </div>
-    
-      <!-- Pagination dots -->
-      <div class="swiper-pagination"></div>
     </div>
     
 </div>
@@ -849,10 +1043,9 @@ many traditional insurance providers, including:
                 </div>
                 <div class="pbmit-ihbox-contents">
                   <h3 class="pbmit-element-title">Wayzata</h3>
-                  <div class="pbmit-heading-desc">
-                    1421 Wayzata Blvd<br />
-                    Suite 303<br />
-                    Wayzata, MN 55391
+                  <div class="pbmit-heading-desc clickable-address"id="map-address" style="cursor: pointer">
+                    1421 Wayzata Blvd., Suite 303 <br/>
+                    Wayzata, MN 55391.
                   </div>
                 </div>
               </div>
@@ -872,9 +1065,8 @@ many traditional insurance providers, including:
                 </div>
                 <div class="pbmit-ihbox-contents">
                   <h3 class="pbmit-element-title">St. Cloud</h3>
-                  <div class="pbmit-heading-desc">
-                    3920 42nd Ave S<br />
-                    South Bldg<br />
+                  <div class="pbmit-heading-desc clickable-address" style="cursor: pointer" id="map-address2">
+                    3920 42nd Ave S, South Bldg<br />
                     St. Cloud, MN 56301
                   </div>
                 </div>
@@ -895,6 +1087,10 @@ many traditional insurance providers, including:
                 </div>
                 <div class="pbmit-ihbox-contents">
                   <h3 class="pbmit-element-title text-muted">Coming Soon</h3>
+                  <div class="pbmit-heading-desc clickable-address" id="map-edina" style="cursor:pointer">
+                    Edina
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -1045,117 +1241,200 @@ many traditional insurance providers, including:
           font-size: 14px; /* or whatever smaller size works */
         }
       }
+
+      @media (max-width: 768px) {
+  .menu-item-container {
+    width: 100%;
+    border-bottom: 2px solid #ccc; /* or your desired color */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px; /* adjust spacing as needed */
+  }
+
+  .menu-item-container .dropdown-icon {
+    color: #333 !important; /* make icon gray/black, not navy */
+    background-color: transparent !important; /* remove unwanted bg */
+  }
+}
+
     </style>
   </section>
-  <footer class="py-5  text-white" style="
-  background: linear-gradient(to right, #192136, #273353);
-  font-family: var(--pbmit-body-typography-font-family);
-  color: var(--pbmit-heading-color);
-">
-  <div class="container text-start text-md-justify">
+  <footer
+  class="py-5 text-white"
+  style="
+    background: linear-gradient(to right, #192136, #273353);
+    font-family: var(--pbmit-body-typography-font-family);
+    color: var(--pbmit-heading-color);
+  "
+>
+  <div class="container">
     <div class="row row-cols-1 row-cols-md-4 g-4">
-      
       <!-- Logo & Tagline -->
-      <div class="text-left">
-       <img
-         src="images/logo/Landscape White.png"
-         alt="Twin Cities Cardiology Logo"
-         class="mb-2 img-fluid"
-         style="max-height: 80px; width: auto; height: auto;"
-       />
-     
-       <p class="fst-italic text-light mx-auto" 
-                     style="font-size: 11px; font-weight: 500; line-height: 1.6; max-width: 220px; text-align: left;">
-                     "It’s not just about hearts.<br/>
+      <div class="col text-left">
+        <img
+          src="images/logo/Landscape White.png"
+          alt="Twin Cities Cardiology Logo"
+          class="mb-2 img-fluid"
+          style="max-height: 80px; width: auto; height: auto"
+        />
 
-                     It's about the people who carry them."
-                  </p>
-                  <style>
-                    @media (max-width: 768px) {
-                      .fst-italic.text-light {
-                        margin-left: 0 !important;
-                        margin-right: auto !important;
-                      }
-                    }
-                    </style>
-     </div>
-     
+        <p
+          class="fst-italic text-light mx-auto"
+          style="
+            font-size: 11px;
+            font-weight: 500;
+            line-height: 1.6;
+            max-width: 220px;
+            text-align: left;
+          "
+        >
+          "It's not just about hearts.<br />
+
+          It's about the people who carry them."
+        </p>
+      </div>
 
       <!-- Services Links -->
-      <div>
-        <h6 class="fw-bold mb-3 text-white" style="font-size: 15px;">Services</h6>
+      <div class="col">
+        <h6 class="fw-bold mb-3 text-white" style="font-size: 15px">
+          Services
+        </h6>
         <ul class="list-unstyled small">
-          <li><a href="/cardiology.html" class="text-decoration-none text-light">› Cardiology</a></li>
-          <li><a href="/vascularmedicine.html" class="text-decoration-none text-light">› Vascular Medicine</a></li>
-          <li><a href="/executivehealthphysical.html" class="text-decoration-none text-light">› Executive Health Physical</a></li>
-          <li><a href="/conciergeprogram.html" class="text-decoration-none text-light">› Concierge Program</a></li>
+          <li>
+            <a
+              href="/cardiology.html"
+              class="text-decoration-none text-light"
+              >› Cardiology</a
+            >
+          </li>
+          <li>
+            <a
+              href="/vascularmedicine.html"
+              class="text-decoration-none text-light"
+              >› Vascular Medicine</a
+            >
+          </li>
+          <li>
+            <a
+              href="/executivehealthphysical.html"
+              class="text-decoration-none text-light"
+              >› Executive Health Physical</a
+            >
+          </li>
+          <li>
+            <a
+              href="/conciergeprogram.html"
+              class="text-decoration-none text-light"
+              >› Concierge Program</a
+            >
+          </li>
         </ul>
       </div>
 
       <!-- Clinic Hours -->
-      <div class="ps-md-3 clinic-hours-shift">
-        <h6 class="fw-bold mb-3 text-white" style="font-size: 15px;">Clinic Hours</h6>
+      <div class="col clinic-hours-shift">
+        <h6 class="fw-bold mb-3 text-white" style="font-size: 15px">
+          Clinic Hours
+        </h6>
         <ul class="list-unstyled small text-light">
           <li class="d-flex justify-content-between">
-            <span>Mon – Thu:</span> <span class="fw-semibold">9:30 – 4:00</span>
-          </li>
-          <li class="d-flex justify-content-between">
-            <span>Friday <small class="text-danger fw-semibold">(Emergencies only)</small>:</span>
+            <span>Mon – Thu</span>
             <span class="fw-semibold">9:30 – 4:00</span>
           </li>
           <li class="d-flex justify-content-between">
-            <span>Sat – Sun:</span> <span class="fw-semibold">Closed</span>
+            <span
+              >Friday
+              <small class="text-danger fw-semibold"
+                >(Emergencies only)</small
+              ></span
+            >
+            <span class="fw-semibold">9:30 – 4:00</span>
+          </li>
+          <li class="d-flex justify-content-between">
+            <span>Sat – Sun</span> <span class="fw-semibold">Closed</span>
           </li>
         </ul>
       </div>
 
       <!-- Contact Info -->
-      <div class="ps-md-4 ps-lg-5 contact-right-shift">
-       <h6 class="fw-bold mb-3 text-white " style="font-size: 15px;">Contact Us</h6>
-       <ul class="list-unstyled small text-light">
-         <li class="d-flex align-items-center mb-2">
-           <span class="me-2" style="min-width: 22px;">
-             <i class="fas fa-envelope text-danger" style="font-size: 16px;"></i>
-           </span>
-           <a href="mailto:contactus@tccardio.org" class="text-decoration-none text-light">contactus@tccardio.org</a>
-         </li>
-     
-         <li class="d-flex align-items-center mb-2">
-           <span class="me-2" style="min-width: 22px;">
-             <i class="fas fa-phone text-danger" style="font-size: 16px;"></i>
-           </span>
-           <a href="tel:19522326132" class="text-decoration-none text-light">+1 (952) 232-6132</a>
-         </li>
-     
-         <li class="d-flex align-items-center mb-2">
-           <span class="me-2" style="min-width: 22px;">
-             <i class="pbmit-base-icon-location text-danger" style="font-size: 21px;"></i>
-           </span>
-           <span>1421 Wayzata Blvd, Suite 303
-            Wayzata, MN 55391</span>
-         </li>
-     
-         
-       </ul>
-     </div>
-     
-     
+      <div class="col contact-right-shift">
+        <h6 class="fw-bold mb-3 text-white" style="font-size: 15px">
+          Contact Us
+        </h6>
+        <ul class="list-unstyled small text-light">
+          <li class="d-flex align-items-center mb-2">
+            <span class="me-2" style="min-width: 22px">
+              <i
+                class="fas fa-envelope text-danger"
+                style="font-size: 16px"
+              ></i>
+            </span>
+            <a
+              href="mailto:contactus@tccardio.org"
+              class="text-decoration-none text-light"
+              >contactus@tccardio.org</a
+            >
+          </li>
 
+          <li class="d-flex align-items-center mb-2">
+            <span class="me-2" style="min-width: 22px">
+              <i
+                class="fas fa-phone text-danger"
+                style="font-size: 16px"
+              ></i>
+            </span>
+            <a
+              href="tel:19522326132"
+              class="text-decoration-none text-light"
+              >+1 (952) 232-6132</a
+            >
+          </li>
+
+          <li class="d-flex align-items-center mb-2">
+            <span class="me-1" style="min-width: 22px">
+              <i
+                class="pbmit-base-icon-location text-danger"
+                style="font-size: 21px"
+              ></i>
+            </span>
+            <span
+              style="cursor: pointer; white-space: nowrap"
+              id="map-address1"
+            >
+              1421 Wayzata Blvd., Suite 303<br />
+              Wayzata, MN 55391.
+            </span>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!-- Divider -->
-    <hr class="my-4" style="border-top: 1px solid rgba(255, 255, 255, 0.6);" />
-
+    <hr
+      class="my-4"
+      style="border-top: 1px solid rgba(255, 255, 255, 0.6)"
+    />
 
     <!-- Bottom Strip -->
-    <div class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-4 pt-3 " style="border-color: rgba(255, 255, 255, 0.1);">
-     <p class="mb-2 mb-md-0 small text-light fw-bold text-start w-100" style="font-size: 14px;">
-       © 2025 Twin Cities Cardiology. All rights reserved.
-     </p>
-     <p class="mb-0 small text-light fw-bold text-start text-md-end w-100" style="font-size: 14px;">
-       Privacy Policy
-     </p>
-   </div>
+    <div
+      class="d-flex flex-column flex-md-row justify-content-between align-items-center mt-4 pt-3"
+      style="border-color: rgba(255, 255, 255, 0.1)"
+    >
+      <p
+        class="mb-2 mb-md-0 small text-light fw-bold text-start w-100"
+        style="font-size: 14px"
+      >
+        © 2025 Twin Cities Cardiology. All rights reserved.
+      </p>
+      <p
+        class="mb-0 small text-light fw-bold text-start text-md-end w-100"
+        style="font-size: 14px"
+      >
+        Privacy Policy
+      </p>
+    </div>
   </div>
 </footer>
 
@@ -1240,6 +1519,57 @@ many traditional insurance providers, including:
             },
         });
     
+        const address = "1421 Wayzata Blvd, Suite 303, Wayzata, MN 55391";
+        const encodedAddress = encodeURIComponent(address);
+
+        // Detect platform
+        const isApple = /iPhone|iPad|Macintosh/.test(navigator.userAgent);
+        const mapUrl = isApple
+          ? `http://maps.apple.com/?q=${encodedAddress}`
+          : `https://www.google.com/maps?q=${encodedAddress}`;
+
+        // Open correct link on click
+        document.getElementById("map-address").addEventListener("click", () => {
+          window.open(mapUrl, "_blank");
+        });
+        
+        const address1 = "1421 Wayzata Blvd, Suite 303, Wayzata, MN 55391";
+        const encodedAddress1 = encodeURIComponent(address1);
+
+        // Detect platform
+        const isApple1 = /iPhone|iPad|Macintosh/.test(navigator.userAgent);
+        const mapUrl1 = isApple1
+          ? `http://maps.apple.com/?q=${encodedAddress}`
+          : `https://www.google.com/maps?q=${encodedAddress}`;
+
+        // Open correct link on click
+        document.getElementById("map-address1").addEventListener("click", () => {
+          window.open(mapUrl, "_blank");
+        });
+
+
+        const address2 = "3920 42nd Ave S, South Bldg, St. Cloud, MN 56301";
+        const encodedAddress2 = encodeURIComponent(address2);
+        // Detect platform
+        const isApple2= /iPhone|iPad|Macintosh/.test(navigator.userAgent);
+        const mapUrl2 = isApple2
+          ? `http://maps.apple.com/?q=${encodedAddress2}`
+          : `https://www.google.com/maps?q=${encodedAddress2}`;
+
+        // Open correct link on click
+        document.getElementById("map-address2").addEventListener("click", () => {
+          window.open(mapUrl2, "_blank");
+        });
+
+        const address3 = "Edina, MN";
+        const encodedAddress3 = encodeURIComponent(address3);  
+        const isApple3 = /iPhone|iPad|Macintosh/.test(navigator.userAgent);
+        const mapUrl3 = isApple3
+          ? `http://maps.apple.com/?q=${encodedAddress3}`
+          : `https://www.google.com/maps?q=${encodedAddress3}`;
+        document.getElementById("map-edina").addEventListener("click", function () {
+        window.open(mapUrl3, "_blank");
+      });
 
 
     
