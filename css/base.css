@@ -1073,3 +1073,9 @@ body .scroll-to-top:hover {
   -o-transform: translateY(0);
   transform: translateY(0);
 }
+.my-tcc-link {
+  color: var(--pbmit-white-color)
+}
+.my-tcc-link:hover {
+  color: var(--pbmit-global-color);
+}
