@@ -1075,8 +1075,10 @@ body .scroll-to-top:hover {
 }
 .my-tcc-link {
   color: var(--pbmit-white-color);
-  font-weight: bolder;
 }
 .my-tcc-link:hover {
   color: var(--pbmit-global-color);
+}
+.text-tcc {
+  color: rgba(var(--bs-white-rgb),var(--bs-text-opacity)) !important;
 }
